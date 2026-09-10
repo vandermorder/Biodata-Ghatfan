@@ -1,0 +1,299 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Text', 'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.47059;
+    letter-spacing: -0.022em;
+    font-weight: 400;
+}
+
+/* Garis Pembatas Bergaya Apple */
+.divider {
+    border: none;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Navbar Floating Liquid Glass */
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    padding: 6px;
+    position: sticky;
+    top: 15px;
+    max-width: fit-content;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 40px;
+    z-index: 100;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    
+    /* Mencegah highlight biru saat disentuh di HP */
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* Liquid Glass Indicator */
+.nav-indicator {
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 0;
+    width: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+    pointer-events: none;
+}
+
+nav a {
+    position: relative;
+    z-index: 2;
+    color: #6e6e73;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+nav a.active,
+nav a:hover { 
+    color: #1d1d1f; 
+}
+
+/* Sections */
+section, header, footer {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: -0.003em;
+    margin-bottom: 20px;
+}
+
+/* Hero */
+.hero { text-align: left; }
+.tagline { 
+    color: #0066cc;
+    font-size: 12px; 
+    letter-spacing: 0.08em; 
+    text-transform: uppercase; 
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Animasi Irama Musik Teks GHATFAN */
+.title { 
+    font-size: 4rem; 
+    font-weight: 600; 
+    margin: 10px 0; 
+    color: #1d1d1f; 
+    letter-spacing: -0.015em; 
+    display: flex;
+}
+
+.wave-text span {
+    display: inline-block;
+    animation: musicWave 2.4s ease-in-out infinite;
+}
+
+.wave-text span:nth-child(1) { animation-delay: 0.0s; }
+.wave-text span:nth-child(2) { animation-delay: 0.2s; }
+.wave-text span:nth-child(3) { animation-delay: 0.4s; }
+.wave-text span:nth-child(4) { animation-delay: 0.6s; }
+.wave-text span:nth-child(5) { animation-delay: 0.8s; }
+.wave-text span:nth-child(6) { animation-delay: 1.0s; }
+.wave-text span:nth-child(7) { animation-delay: 1.2s; }
+.wave-text span.asterisk { animation-delay: 1.4s; }
+
+@keyframes musicWave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.desc { 
+    color: #6e6e73; 
+    margin-bottom: 40px; 
+    max-width: 500px; 
+    font-size: 17px;
+    line-height: 1.47059;
+    letter-spacing: -0.022em;
+    font-weight: 400;
+}
+
+/* Premium Solid Button ala iOS */
+.btn { 
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px; 
+    background: #0071e3; 
+    color: #ffffff; 
+    text-decoration: none; 
+    border-radius: 30px; 
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, background-color 0.3s ease; 
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn .chevron {
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover { 
+    background: #0077ed;
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(0, 113, 227, 0.25);
+}
+
+.btn:hover .chevron {
+    transform: translateX(4px);
+}
+
+/* Cards Elegan */
+.card {
+    background: #ffffff;
+    padding: 28px;
+    margin-bottom: 20px;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    transition: all 0.4s ease;
+}
+.card:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+.card h3 { 
+    color: #1d1d1f; 
+    margin-bottom: 8px; 
+    font-weight: 600; 
+    font-size: 20px;
+    letter-spacing: -0.01em; 
+}
+.card p { 
+    color: #6e6e73; 
+    font-size: 14px; 
+    line-height: 1.42857;
+    font-weight: 400;
+}
+
+/* Skills List */
+.skills ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #1d1d1f;
+}
+
+.skills li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Marquee */
+.marquee {
+    background: #ffffff;
+    padding: 18px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.marquee-content {
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+    color: #6e6e73;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Footer */
+footer { 
+    text-align: left; 
+    padding-bottom: 40px; 
+}
+footer h2 { 
+    font-weight: 600; 
+    margin-bottom: 15px; 
+    color: #1d1d1f;
+}
+footer p { 
+    color: #6e6e73; 
+    font-size: 13px; 
+    font-weight: 400; 
+    margin-top: 6px; 
+    line-height: 1.33337;
+}
+
+/* Terminal Teks */
+.terminal {
+    font-family: 'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace;
+    color: #6e6e73;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+/* Animation Class */
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
