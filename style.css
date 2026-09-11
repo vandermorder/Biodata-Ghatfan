@@ -17,16 +17,23 @@ body {
     font-weight: 400;
 }
 
+/* Container utama agar konten tidak terlalu ke tengah dan rata ke sisi kiri dengan margin proporsional */
+.main-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
 /* Garis Pembatas Bergaya Apple */
 .divider {
     border: none;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.08);
-    max-width: 800px;
+    width: 100%;
     margin: 0 auto;
 }
 
-/* Navbar Floating Liquid Glass (Lebih Transparan & Mengkilap) */
+/* Navbar Floating Liquid Glass */
 nav {
     display: flex;
     justify-content: flex-start;
@@ -34,13 +41,13 @@ nav {
     gap: 4px;
     padding: 6px;
     position: sticky;
-    top: 15px;
+    top: 20px;
     max-width: fit-content;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.35); /* Lebih transparan */
+    margin: 20px auto 0 auto;
+    background: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(30px) saturate(220%);
     -webkit-backdrop-filter: blur(30px) saturate(220%);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), inset 0 0 0 1.5px rgba(255, 255, 255, 0.5); /* Efek kilau border kaca */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), inset 0 0 0 1.5px rgba(255, 255, 255, 0.5);
     border-radius: 40px;
     z-index: 100;
     overflow-x: auto;
@@ -56,18 +63,18 @@ nav::-webkit-scrollbar {
     display: none;
 }
 
-/* Liquid Glass Indicator (Mengkilap & Kaca Transparan) */
+/* Liquid Glass Indicator */
 .nav-indicator {
     position: absolute;
     top: 6px;
     bottom: 6px;
     left: 0;
     width: 0;
-    background: rgba(255, 255, 255, 0.75); /* Kaca aktif lebih transparan tapi mewah */
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px rgba(0, 0, 0, 0.05); /* Kilau atas-bawah */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px rgba(0, 0, 0, 0.05);
     transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     z-index: 1;
     pointer-events: none;
@@ -96,9 +103,7 @@ nav a:hover {
 
 /* Sections */
 section, header, footer {
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 60px 0;
 }
 
 h2 {
@@ -121,7 +126,7 @@ h2 {
 
 /* Animasi Irama Musik Teks GHATFAN */
 .title { 
-    font-size: 4rem; 
+    font-size: 4.5rem; 
     font-weight: 600; 
     margin: 10px 0; 
     color: #1d1d1f; 
@@ -155,7 +160,7 @@ h2 {
 .desc { 
     color: #6e6e73; 
     margin-bottom: 40px; 
-    max-width: 500px; 
+    max-width: 600px; 
     font-size: 17px;
     line-height: 1.47059;
     letter-spacing: -0.022em;
@@ -195,11 +200,11 @@ h2 {
     transform: translateX(4px);
 }
 
-/* Cards / Tabel (Jarak atas-bawah diperlebar & lebar kiri-kanan disamakan proporsional) */
+/* Cards / Tabel */
 .card {
     background: #ffffff;
-    padding: 34px 28px; /* Padding atas-bawah diperbesar jadi 34px, kiri-kanan 28px */
-    margin-bottom: 24px; /* Jarak antar card diperbesar */
+    padding: 34px 28px;
+    margin-bottom: 24px;
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.04);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.025);
@@ -211,7 +216,7 @@ h2 {
 }
 .card h3 { 
     color: #1d1d1f; 
-    margin-bottom: 10px; /* Jarak bawah judul card disesuaikan */
+    margin-bottom: 10px; 
     font-weight: 600; 
     font-size: 20px;
     letter-spacing: -0.01em; 
@@ -243,6 +248,7 @@ h2 {
     white-space: nowrap;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin: 20px 0;
 }
 .marquee-content {
     display: inline-block;
@@ -293,4 +299,11 @@ footer p {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Responsif untuk layar HP kecil */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 0 20px;
+    }
 }
