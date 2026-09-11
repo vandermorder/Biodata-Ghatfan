@@ -1,18 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const nav = document.querySelector("nav");
     const navLinks = document.querySelectorAll("nav a");
     const indicator = document.querySelector(".nav-indicator");
 
     function updateIndicator(el) {
         if (!el || !indicator) return;
-        const navStyle = window.getComputedStyle(nav);
-        const navPaddingLeft = parseFloat(navStyle.paddingLeft) || 0;
         
-        const offsetLeft = el.offsetLeft - navPaddingLeft;
-        const width = el.offsetWidth;
-
-        indicator.style.left = `${offsetLeft}px`;
-        indicator.style.width = `${width}px`;
+        // Memakai offsetLeft langsung agar posisi akurat dan tidak menabrak batas padding kiri
+        indicator.style.left = `${el.offsetLeft}px`;
+        indicator.style.width = `${el.offsetWidth}px`;
     }
 
     const activeLink = document.querySelector("nav a.active") || navLinks[0];
