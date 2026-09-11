@@ -17,16 +17,16 @@ body {
     font-weight: 400;
 }
 
-/* Container Utama diratakan ke kiri dengan lebar proporsional untuk laptop/PC */
+/* Container Utama */
 .main-container {
     width: 90%;
     max-width: 1200px;
-    margin-left: 60px; /* Geser ke sisi kiri agar rapi */
+    margin-left: 60px;
     margin-right: auto;
     padding: 0 20px;
 }
 
-/* Garis Pembatas Bergaya Apple */
+/* Garis Pembatas */
 .divider {
     border: none;
     height: 1px;
@@ -103,7 +103,7 @@ nav a:hover {
     color: #1d1d1f; 
 }
 
-/* Sections (Tanpa auto margin agar tidak ke tengah) */
+/* Sections */
 section, header, footer {
     padding: 60px 0;
     text-align: left;
@@ -127,7 +127,7 @@ h2 {
     font-weight: 600;
 }
 
-/* Animasi Irama Musik Teks GHATFAN */
+/* Animasi Irama Musik */
 .title { 
     font-size: 4.5rem; 
     font-weight: 600; 
@@ -152,12 +152,8 @@ h2 {
 .wave-text span.asterisk { animation-delay: 1.4s; }
 
 @keyframes musicWave {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-12px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
 .desc { 
@@ -170,7 +166,7 @@ h2 {
     font-weight: 400;
 }
 
-/* Premium Solid Button ala iOS */
+/* Button iOS */
 .btn { 
     display: inline-flex;
     align-items: center;
@@ -203,7 +199,7 @@ h2 {
     transform: translateX(4px);
 }
 
-/* Cards / Tabel */
+/* Cards */
 .card {
     background: #ffffff;
     padding: 34px 28px;
@@ -304,7 +300,7 @@ footer p {
     transform: translateY(0);
 }
 
-/* Responsif untuk layar HP kecil */
+/* Responsif */
 @media (max-width: 768px) {
     .main-container {
         width: 100%;
