@@ -22,8 +22,39 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section dengan Animasi Bunga Matahari di Kanan -->
     <header class="hero" id="home">
+        <!-- Bunga Matahari Interaktif (Mekar / Menutup saat Scroll) -->
+        <div class="sunflower-container" id="sunflower">
+            <svg class="sunflower-svg" viewBox="0 0 200 350" xmlns="http://www.w3.org/2000/svg">
+                <!-- Batang dan Daun -->
+                <path class="stem" d="M100,160 Q95,240 100,350" />
+                <path class="leaf left-leaf" d="M97,230 Q60,210 50,230 Q60,260 98,255" />
+                <path class="leaf right-leaf" d="M101,270 Q140,250 150,270 Q140,300 100,295" />
+                
+                <!-- Kelopak Bunga (Grup yang akan menutup/skala menyusut saat scroll) -->
+                <g class="petals-group" id="petalsGroup">
+                    <!-- Kelopak-kelopak bunga matahari -->
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFD000" transform="rotate(0 100 110)" />
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFC000" transform="rotate(30 100 110)" />
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFD000" transform="rotate(60 100 110)" />
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFC000" transform="rotate(90 100 110)" />
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFD000" transform="rotate(120 100 110)" />
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFC000" transform="rotate(150 100 110)" />
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFD000" transform="rotate(180 100 110)" />
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFC000" transform="rotate(210 100 110)" />
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFD000" transform="rotate(240 100 110)" />
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFC000" transform="rotate(270 100 110)" />
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFD000" transform="rotate(300 100 110)" />
+                    <ellipse cx="100" cy="70" rx="15" ry="42" fill="#FFC000" transform="rotate(330 100 110)" />
+                </g>
+
+                <!-- Pusat / Tengah Bunga -->
+                <circle cx="100" cy="110" r="32" fill="#5C2C16" />
+                <circle cx="100" cy="110" r="24" fill="#3D1C0A" />
+            </svg>
+        </div>
+
         <p class="tagline">Student · Explorer · Builder</p>
         <h1 class="title wave-text">
             <span>G</span><span>H</span><span>A</span><span>T</span><span>F</span><span>A</span><span>N</span><span class="asterisk">♪</span>
@@ -34,8 +65,9 @@
 
     <hr class="divider">
 
-    <!-- About Section -->
+    <!-- About Section dengan Efek Gerimis & Petir -->
     <section class="about fade-in" id="about">
+        <div class="rain-container" id="rainContainer"></div>
         <p class="terminal">$ whoami</p>
         <h2>Saya Ghatfan Almer Yusria. Pelajar yang tertarik ke dunia IT karena rasa penasaran.</h2>
         <p>Bermula dari pandemi, sekarang kebanyakan waktu saya habis untuk reverse engineering dan OSINT.</p>
@@ -54,13 +86,15 @@
     <!-- Projects Section -->
     <section class="projects fade-in" id="projects">
         <h2>Selected Work</h2>
-        <div class="card">
-            <h3>01 OSINT Toolkit</h3>
-            <p>Platform untuk mengumpulkan tools OSINT publik dalam satu tempat.</p>
-        </div>
-        <div class="card">
-            <h3>02 Web Exploration</h3>
-            <p>Eksplorasi layout, navigasi, dan struktur konten.</p>
+        <div class="card-grid">
+            <div class="card">
+                <h3>01 OSINT Toolkit</h3>
+                <p>Platform untuk mengumpulkan tools OSINT publik dalam satu tempat.</p>
+            </div>
+            <div class="card">
+                <h3>02 Web Exploration</h3>
+                <p>Eksplorasi layout, navigasi, dan struktur konten.</p>
+            </div>
         </div>
     </section>
 
@@ -69,9 +103,11 @@
     <!-- Services Section -->
     <section class="services fade-in" id="services">
         <h2>Services</h2>
-        <div class="card">
-            <h3>Basic Pentest</h3>
-            <p>Surface-level APK audit & network traffic inspection.</p>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Basic Pentest</h3>
+                <p>Surface-level APK audit & network traffic inspection.</p>
+            </div>
         </div>
     </section>
 
@@ -94,9 +130,10 @@
         <h2>Get in touch</h2>
         <p>Email: fannalmer@gmail.com</p>
         <p>Instagram: @ghtfnalmr_</p>
+        <p>WhatsApp: +6285781856132</p>
         <p>&copy; 2026 Ghatfan. Built with curiosity.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
