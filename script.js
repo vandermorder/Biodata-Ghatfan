@@ -1,6 +1,3 @@
-// Menandai bahwa JS berhasil berjalan agar animasi fade-in aktif
-document.documentElement.classList.add('js');
-
 document.addEventListener("DOMContentLoaded", () => {
     const nav = document.querySelector("nav");
     const navLinks = document.querySelectorAll("nav a");
