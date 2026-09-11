@@ -17,11 +17,13 @@ body {
     font-weight: 400;
 }
 
-/* Container utama agar konten tidak terlalu ke tengah dan rata ke sisi kiri dengan margin proporsional */
+/* Container Utama diratakan ke kiri dengan lebar proporsional untuk laptop/PC */
 .main-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 50px;
+    width: 90%;
+    max-width: 1200px;
+    margin-left: 60px; /* Geser ke sisi kiri agar rapi */
+    margin-right: auto;
+    padding: 0 20px;
 }
 
 /* Garis Pembatas Bergaya Apple */
@@ -30,7 +32,7 @@ body {
     height: 1px;
     background-color: rgba(0, 0, 0, 0.08);
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
 }
 
 /* Navbar Floating Liquid Glass */
@@ -101,9 +103,10 @@ nav a:hover {
     color: #1d1d1f; 
 }
 
-/* Sections */
+/* Sections (Tanpa auto margin agar tidak ke tengah) */
 section, header, footer {
     padding: 60px 0;
+    text-align: left;
 }
 
 h2 {
@@ -304,6 +307,8 @@ footer p {
 /* Responsif untuk layar HP kecil */
 @media (max-width: 768px) {
     .main-container {
+        width: 100%;
+        margin-left: 0;
         padding: 0 20px;
     }
 }
