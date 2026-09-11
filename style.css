@@ -26,7 +26,7 @@ body {
     margin: 0 auto;
 }
 
-/* Navbar Floating Liquid Glass */
+/* Navbar Floating Liquid Glass (Lebih Transparan & Mengkilap) */
 nav {
     display: flex;
     justify-content: flex-start;
@@ -37,18 +37,16 @@ nav {
     top: 15px;
     max-width: fit-content;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(25px) saturate(180%);
-    -webkit-backdrop-filter: blur(25px) saturate(180%);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.35); /* Lebih transparan */
+    backdrop-filter: blur(30px) saturate(220%);
+    -webkit-backdrop-filter: blur(30px) saturate(220%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), inset 0 0 0 1.5px rgba(255, 255, 255, 0.5); /* Efek kilau border kaca */
     border-radius: 40px;
     z-index: 100;
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     -webkit-user-select: none;
@@ -58,18 +56,18 @@ nav::-webkit-scrollbar {
     display: none;
 }
 
-/* Liquid Glass Indicator */
+/* Liquid Glass Indicator (Mengkilap & Kaca Transparan) */
 .nav-indicator {
     position: absolute;
     top: 6px;
     bottom: 6px;
     left: 0;
     width: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.75); /* Kaca aktif lebih transparan tapi mewah */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.9), inset 0 -1px 1px rgba(0, 0, 0, 0.05); /* Kilau atas-bawah */
     transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     z-index: 1;
     pointer-events: none;
@@ -78,7 +76,7 @@ nav::-webkit-scrollbar {
 nav a {
     position: relative;
     z-index: 2;
-    color: #6e6e73;
+    color: #515154;
     text-decoration: none;
     font-size: 12px;
     letter-spacing: -0.01em;
@@ -197,14 +195,14 @@ h2 {
     transform: translateX(4px);
 }
 
-/* Cards Elegan */
+/* Cards / Tabel (Jarak atas-bawah diperlebar & lebar kiri-kanan disamakan proporsional) */
 .card {
     background: #ffffff;
-    padding: 28px;
-    margin-bottom: 20px;
-    border-radius: 18px;
+    padding: 34px 28px; /* Padding atas-bawah diperbesar jadi 34px, kiri-kanan 28px */
+    margin-bottom: 24px; /* Jarak antar card diperbesar */
+    border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.04);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.025);
     transition: all 0.4s ease;
 }
 .card:hover { 
@@ -213,7 +211,7 @@ h2 {
 }
 .card h3 { 
     color: #1d1d1f; 
-    margin-bottom: 8px; 
+    margin-bottom: 10px; /* Jarak bawah judul card disesuaikan */
     font-weight: 600; 
     font-size: 20px;
     letter-spacing: -0.01em; 
@@ -286,19 +284,13 @@ footer p {
     margin-bottom: 16px;
 }
 
-/* Animation Class (Dipaksa tampil default untuk jaga-jaga jika JS gagal terload) */
+/* Animation Class */
 .fade-in {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* Jika JS aktif dan intersection observer jalan, baru pakai efek transisi */
-.js .fade-in {
     opacity: 0;
     transform: translateY(25px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
-.js .fade-in.visible {
+.fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
